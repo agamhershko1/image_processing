@@ -1,0 +1,24 @@
+Deep Style Image Prior – Exercise 5
+
+This project uses a pre-trained StyleGAN2 model to perform several image reconstruction tasks.
+It was completed as part of an image processing course. The main idea is to use the generator's learned
+ knowledge of human faces to fix or improve images through latent space optimization.
+
+What the project does:
+
+1. GAN Inversion – Reconstructs an input face image by finding a matching latent vector that the generator
+can use.
+2. Image Deblurring – Takes a blurry image and produces a sharper, more natural-looking version.
+3. Image Colorization – Adds realistic color to grayscale face images.
+4. Image Inpainting – Fills in missing or masked parts of an image based on the generator’s learned patterns.
+
+The project was done using Google Colab, with GPU acceleration, and is based on a StyleGAN2 model trained on
+ the FFHQ face dataset.
+
+All input images are aligned before processing to match the dataset format the GAN was trained on. Results
+ depend on the quality of input and how close it is to the training domain.
+
+Each reconstruction task saves its results and the corresponding latent code for reproducibility.
+
+This repository includes the notebook, aligned input images, output results, and saved latent vectors
+(as .npz files).

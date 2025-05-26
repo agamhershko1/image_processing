@@ -1,0 +1,52 @@
+Stereo Mosaicing - Image Processing Exercise 4 (Course 67829)
+
+Overview
+
+This project implements the Stereo Mosaicing algorithm as part of Exercise 4 in the Image Processing course (67829). The algorithm constructs panoramas from videos captured with varying viewpoints or dynamic scenes.
+
+The goal is to create stitched panoramas by aligning and blending frames extracted from input videos, handling both viewpoint changes and dynamic objects.
+
+Features
+
+- Extraction of frames from input video files
+- Detection and matching of keypoints using SIFT
+- Robust homography estimation using RANSAC
+- Image warping and stitching for panorama creation
+- Handling of:
+  - Dynamic panoramas (moving objects)
+  - Viewpoint panoramas (camera viewpoint changes)
+- Bonus: Forward panorama implementation
+
+Requirements
+
+- Python 3.8+
+- OpenCV (opencv-python==4.11.0.86)
+- NumPy (numpy==2.0.2)
+- imageio (imageio==2.36.1)
+
+Install dependencies via:
+
+pip install -r requirements.txt
+
+Usage
+
+Run the script with the input video path and desired output directory.
+
+Example:
+
+python ex4.py --input input_video.mp4 --output ./results/
+
+Code
+
+All implementation is contained in the single script:
+
+- ex4.py
+
+Results
+
+- Generated panoramas and intermediate images are saved in the output directory.
+- Videos demonstrating results for both dynamic and viewpoint panoramas are included in the submission.
+
+Author
+
+Agam Hershko
