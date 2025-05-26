@@ -3,7 +3,7 @@ please skip directly to Project 4.
 
 
 # Image Processing Course Projects – 67829
-**Author:** Agam Hershko
+Author: Agam Hershko
 
 This repository contains five projects completed as part of the Image Processing course (67829) at The Hebrew
  University of Jerusalem. Each project explores a different concept in signal or image processing using
@@ -26,9 +26,9 @@ Detects scene transitions (cuts) in grayscale video using histogram analysis.
 ## 📁 Project 2 – Audio Watermarking & Tempo Detection
 Focuses on audio signal processing through 3 tasks:
 
-1. **Adding Watermarks**: Embeds both audible and inaudible frequency signals in audio.
-2. **Watermark Classification**: Groups audio files based on periodic patterns in the frequency domain.
-3. **Tempo Detection**: Analyzes stretched or resampled audio using watermark shifts.
+1. Adding Watermarks: Embeds both audible and inaudible frequency signals in audio.
+2. Watermark Classification: Groups audio files based on periodic patterns in the frequency domain.
+3. Tempo Detection: Analyzes stretched or resampled audio using watermark shifts.
 
 - Uses STFT and spectrograms to visualize and analyze audio.
 - Identifies manipulation based on frequency changes.
@@ -40,8 +40,8 @@ Focuses on audio signal processing through 3 tasks:
 ## 📁 Project 3 – Hybrid Images & Pyramidal Blending
 Combines images using frequency-based techniques:
 
-- **Hybrid Images**: Merges low frequencies from one image with high frequencies from another.
-- **Pyramidal Blending**: Smoothly blends two images using Gaussian and Laplacian pyramids.
+- Hybrid Images: Merges low frequencies from one image with high frequencies from another.
+- Pyramidal Blending: Smoothly blends two images using Gaussian and Laplacian pyramids.
 
 - Great for visual illusions or seamless editing.
 - Easy to tweak and visualize.
