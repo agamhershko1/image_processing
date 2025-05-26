@@ -1,1 +1,91 @@
+# Scene Cut Detection using Histogram Analysis
 
+### Author: Agam Hershko
+
+## Overview
+
+This project detects scene transitions ("cuts") in grayscale video frames using histogram-based analysis.
+It is designed to work with two categories of video:
+- Category 1: Minimal changes occur within scenes; significant changes appear only at scene transitions.
+- Category 2: At least one scene in the video experiences noticeable lighting or blurring changes
+ (likely due to quantization), but the most significant difference still occurs during scene transitions.
+
+The method applies **cumulative grayscale histograms** to detect the most distinct visual change between
+consecutive frames, identifying the point of a scene cut.
+
+---
+
+## Key Concepts
+
+- Grayscale Conversion: Converts RGB video frames to grayscale to simplify processing.
+- Histogram Calculation: Builds a 256-bin grayscale histogram for each frame.
+- Cumulative Histogram: Computes the cumulative histogram to reduce sensitivity to minor tonal variations.
+- Difference Measurement: Detects scene transitions by finding the largest difference in cumulative
+histogram sums between consecutive frames.
+
+---
+
+## Method
+
+1. Load all video frames using `mediapy`.
+2. Convert each frame to grayscale using PIL.
+3. Compute a grayscale histogram with 256 bins (range 0 to 255).
+4. Create a cumulative histogram using numpy's `cumsum`.
+5. Sum the cumulative histogram.
+6. For each frame (excluding the first), calculate the absolute difference between the current and previous
+   cumulative sums.
+7. Return the index where the largest difference occurs and the subsequent frame.
+
+---
+
+## Requirements
+
+Install the required Python packages:
+
+pip install mediapy pillow numpy
+
+---
+
+## Usage
+
+Run the script from the command line:
+
+python detect_cut.py <video_path> <video_category>
+
+- video_path: Path to the video file (e.g., `./videos/video1.mp4`)
+- video_category: Video type (1 or 2). Currently unused by the algorithm.
+
+### Example
+
+python detect_cut.py ./videos/video1_category1.mp4 1
+
+Expected output:
+(99, 100)
+
+This means the algorithm detected a scene transition between frame 45 and frame 46.
+
+---
+
+## Limitations
+
+- Assumes exactly **one** scene cut per video.
+- May produce incorrect results if lighting or quantization changes exceed the scene cut difference.
+- Ignores spatial pixel information — works purely with intensity histograms.
+- Cannot detect scene transitions with similar histograms but visually different content.
+
+---
+
+## Future Improvements
+
+- Extend to support **multiple scene cuts**.
+- Integrate pre-processing steps:
+  - Histogram equalization
+  - Gamma correction
+  - Spatial filtering
+- Incorporate spatial features for improved accuracy.
+
+---
+
+## License
+
+This project is for educational use only, developed as part of an Image Processing course exercise.
