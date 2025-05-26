@@ -1,0 +1,40 @@
+# Image Processing - Exercise 3
+Hybrid Images and Pyramidal Blending
+
+Author: Agam Hershko
+Course: Image Processing
+Language: Python
+Libraries: OpenCV, NumPy, SciPy
+
+## Description
+
+This project implements two techniques in image processing:
+
+1. Hybrid Images – Combining the low-frequency content of one image with the high-frequency content of another.
+2. Pyramidal Blending – Seamlessly blending two images using Gaussian and Laplacian pyramids.
+
+Both techniques are used to manipulate visual perception and create advanced image compositions.
+
+## Contents
+
+- hybrid_image.py: Implementation of hybrid image creation.
+- pyramid_blending.py: Implementation of pyramidal blending.
+- utils.py: Utility functions for filtering and pyramid construction.
+- main.py: Example usage of both algorithms.
+- images/: Folder with input and output images.
+
+## How to Run
+
+1. Install required packages:
+
+   pip install numpy opencv-python scipy
+
+2. Run hybrid image script:
+
+   python main.py --mode hybrid
+
+3. Run pyramid blending script:
+
+   python main.py --mode blend
+
+You can change input images and parameters by modifying the code in main.py.
