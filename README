@@ -1,0 +1,88 @@
+Note: If you're specifically looking for the image panorama generation algorithm from video (from a resume),
+please skip directly to Project 4.
+
+
+# Image Processing Course Projects – 67829
+**Author:** Agam Hershko
+
+This repository contains five projects completed as part of the Image Processing course (67829) at The Hebrew
+ University of Jerusalem. Each project explores a different concept in signal or image processing using
+ Python. The code, notebooks, reports, and results are organized in separate folders.
+
+---
+
+## 📁 Project 1 – Scene Cut Detection
+Detects scene transitions (cuts) in grayscale video using histogram analysis.
+
+- Works on two types of videos: with static scenes or with lighting/blur changes.
+- Uses cumulative grayscale histograms to detect the most significant change between frames.
+- Outputs the frame index where a cut is detected.
+
+🔧 Requirements: `mediapy`, `Pillow`, `numpy`
+📄 Includes: `detect_cut.py`, sample videos, and explanation
+
+---
+
+## 📁 Project 2 – Audio Watermarking & Tempo Detection
+Focuses on audio signal processing through 3 tasks:
+
+1. **Adding Watermarks**: Embeds both audible and inaudible frequency signals in audio.
+2. **Watermark Classification**: Groups audio files based on periodic patterns in the frequency domain.
+3. **Tempo Detection**: Analyzes stretched or resampled audio using watermark shifts.
+
+- Uses STFT and spectrograms to visualize and analyze audio.
+- Identifies manipulation based on frequency changes.
+
+📄 Includes: audio samples, STFT code, classification logic, and detailed analysis
+
+---
+
+## 📁 Project 3 – Hybrid Images & Pyramidal Blending
+Combines images using frequency-based techniques:
+
+- **Hybrid Images**: Merges low frequencies from one image with high frequencies from another.
+- **Pyramidal Blending**: Smoothly blends two images using Gaussian and Laplacian pyramids.
+
+- Great for visual illusions or seamless editing.
+- Easy to tweak and visualize.
+
+🔧 Requirements: `opencv-python`, `numpy`, `scipy`
+📄 Includes: `main.py`, blending scripts, utils, and image examples
+
+---
+
+## 📁 Project 4 – Stereo Mosaicing (Panoramas from Video)
+Creates panoramic images from input videos.
+
+- Supports dynamic scenes (with motion) and viewpoint changes.
+- Uses feature matching (SIFT), RANSAC, and image warping.
+- Bonus: Forward panorama generation.
+
+🔧 Requirements: `opencv-python`, `numpy`, `imageio`
+📄 Includes: `ex4.py`, input videos, results, and visual demos
+
+---
+
+## 📁 Project 5 – Deep Style Image Prior
+Uses a pre-trained StyleGAN2 model to fix and improve face images.
+
+- Tasks include:
+  - GAN Inversion (reconstruction)
+  - Deblurring
+  - Colorization
+  - Inpainting (filling missing parts)
+- Uses latent space optimization to guide results.
+
+- Run on Google Colab with GPU acceleration.
+- Input images are pre-aligned for better results.
+
+📄 Includes: Colab notebook, input/output images, and saved latent vectors
+
+---
+
+## 📝 Notes
+- These projects were created for educational purposes.
+- Most are run from the command line or via Jupyter/Colab.
+- Each folder contains code, examples, and short reports.
+
+Feel free to explore, reuse, or adapt parts of the code for your own projects!
