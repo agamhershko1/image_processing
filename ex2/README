@@ -1,0 +1,67 @@
+Image Processing - Exercise 2
+Agam Hershko
+
+Overview
+This assignment focuses on audio signal processing and is divided into three main tasks:
+
+Task 1: Adding Watermarks
+In this task, I added two types of watermarks to audio files:
+
+* Good Watermark: Imperceptible to the human ear.
+* Bad Watermark: Clearly audible.
+
+I used STFT (Short-Time Fourier Transform) to handle non-stationary signals and embed frequency-domain modifications. Specifically:
+
+* The bad watermark was added at 10,000 Hz, a frequency within the human hearing range, resulting in a 
+noticeable buzz.
+* The good watermark was added at 18,000 Hz, which is at the edge of human hearing, making it inaudible but 
+  visible on a spectrogram.
+
+Watermarks were embedded by boosting the magnitude of specific frequency bins and reconstructing the signal with ISTFT.
+
+
+Task 2: Classifying Watermarks
+Here, I classified 9 audio files into 3 groups based on the watermarks they contained. Each watermark was a sinusoidal modulation of amplitude in the frequency domain (between 16,000–20,000 Hz). The classification was based on the period of the watermark’s sinusoid, determined using spectrogram analysis and time-interval calculations.
+
+The sinusoidal watermark functions were approximately:
+* Group 1 (Files 2.0–2.2): f(t) = 2000 * sin(0.46t)
+* Group 2 (Files 2.3–2.5): f(t) = 2000 * sin(0.61t)
+* Group 3 (Files 2.6–2.8): f(t) = 2000 * sin(0.76t)
+Spectrograms and STFT analysis helped identify these patterns by locating peaks around 20 kHz.
+
+
+Task 3: Tempo Change Detection
+This part involved analyzing two audio files:
+
+* One file was time-scaled (stretched).
+
+* One was frequency-scaled (resampled).
+
+Using STFT and visual inspection:
+
+* The first file had reduced frequency range and increased amplitude — indicating time-domain stretching.
+
+* The second file maintained pitch but had a shorter duration — suggesting frequency-domain acceleration.
+
+A watermark in both files further helped compute the scaling factor. By comparing the frequency shift (e.g., 20 kHz in the second file became 5 kHz in the first), I determined the time-stretch factor was approximately x = 4.
+
+Techniques Used
+* STFT/ISTFT: For non-stationary signal analysis.
+
+* Spectrograms: Visual representation of frequency content.
+
+* Fourier Transform Manipulations: For watermark embedding and detection.
+
+* Signal Classification: Based on periodicity in frequency-domain patterns.
+
+* Tempo Change Detection: Using comparative spectrogram and watermark analysis.
+
+Key Learnings:
+
+1. Spectrograms and STFT are critical tools for analyzing time-frequency behavior in audio.
+
+2. Non-stationary signal handling is essential for real-world audio tasks.
+
+3. Understanding time vs. frequency domain effects is key to decoding audio manipulations.
+
+4. Embedding and detecting watermarks must balance imperceptibility and robustness.
